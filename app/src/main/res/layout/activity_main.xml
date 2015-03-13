@@ -30,6 +30,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/imagenView2"
             android:src="@drawable/protillo"/>
+
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -61,7 +62,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:id="@+id/imageView6"
+            android:id="@+id/imageView11"
             android:src="@drawable/alfonso"
             android:layout_gravity="center_horizontal|top"/>
 
@@ -75,19 +76,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/imageView9"
-            android:src="@drawable/"/>
+            />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/imageView8"
-            android:src="@drawable/"/>
+           />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/imageView0"
-            android:src="@drawable/"/>
+            />
     </LinearLayout>
 
 

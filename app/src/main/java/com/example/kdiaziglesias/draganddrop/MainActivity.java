@@ -17,6 +17,36 @@ public class MainActivity extends ActionBarActivity implements View.OnTouchListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+
+        findViewById(R.id.imagenView).setOnTouchListener(this);
+        findViewById(R.id.imagenView2).setOnTouchListener(this);
+        findViewById(R.id.imagenView6).setOnTouchListener(this);
+        findViewById(R.id.imageView0).setOnTouchListener(this);
+        findViewById(R.id.imageView5).setOnTouchListener(this);
+        findViewById(R.id.imagenView3).setOnTouchListener(this);
+        findViewById(R.id.imageView11).setOnTouchListener(this);
+        findViewById(R.id.imageView8).setOnTouchListener(this);
+        findViewById(R.id.imageView9).setOnTouchListener(this);
+        findViewById(R.id.imageView10).setOnTouchListener(this);
+
+
+
+
+        View superior = findViewById(R.id.sup);
+        View inferior = findViewById(R.id.inf);
+        View fuego = findViewById(R.id.cataluña);
+        View agua = findViewById(R.id.sevilla);
+        View electrico = findViewById(R.id.asturias);
+        View planta = findViewById(R.id.galicia);
+        superior.setOnDragListener(new MiDrag());
+        inferior.setOnDragListener(new MiDrag());
+        fuego.setOnDragListener(new MiDrag());
+        agua.setOnDragListener(new MiDrag());
+        electrico.setOnDragListener(new MiDrag());
+        planta.setOnDragListener(new MiDrag());
+
     }
 
 
