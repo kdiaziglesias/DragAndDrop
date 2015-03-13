@@ -3,20 +3,15 @@ package com.example.kdiaziglesias.draganddrop;
 import android.content.ClipData;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.view.DragEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
-import android.content.Context;
-import android.os.Bundle;
-import android.app.Activity;
-import android.view.DragEvent;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.Toast;
 
-public class MainActivity extends ActionBarActivity implements View.OnTouchListener{
+public class MainActivity extends ActionBarActivity implements View.OnTouchListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,25 +42,25 @@ public class MainActivity extends ActionBarActivity implements View.OnTouchListe
         return super.onOptionsItemSelected(item);
     }
 
-    public boolean onTouch(View objeto, MotionEvent evento){
+    public boolean onTouch(View objeto, MotionEvent evento) {
 
-        if(evento.getAction() == MotionEvent.ACTION_DOWN){
-            ClipData datos = ClipData.newPlainText("","");;
+        if (evento.getAction() == MotionEvent.ACTION_DOWN) {
+            ClipData datos = ClipData.newPlainText("", "");
+            ;
             View.DragShadowBuilder objeto_sombra = new View.DragShadowBuilder(objeto);
             objeto.startDrag(datos, objeto_sombra, objeto, 0);
             objeto.setVisibility(View.INVISIBLE);
             return true;
-        }
-        else{
+        } else {
             return false;
         }
     }
 
-    final class MiDrag implements View.OnDragListener{
+    final class MiDrag implements View.OnDragListener {
 
 
-        public boolean onDrag(View contenedor_nuevo, DragEvent evento){
-            switch (evento.getAction()){
+        public boolean onDrag(View contenedor_nuevo, DragEvent evento) {
+            switch (evento.getAction()) {
                 case DragEvent.ACTION_DRAG_ENTERED:
                     break;
                 case DragEvent.ACTION_DRAG_EXITED:
@@ -87,8 +82,5 @@ public class MainActivity extends ActionBarActivity implements View.OnTouchListe
         }
 
 
-
-
-
-
+    }
 }
