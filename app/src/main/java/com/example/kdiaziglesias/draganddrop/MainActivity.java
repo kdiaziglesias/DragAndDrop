@@ -1,0 +1,94 @@
+package com.example.kdiaziglesias.draganddrop;
+
+import android.content.ClipData;
+import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.MotionEvent;
+import android.view.View;
+import android.content.Context;
+import android.os.Bundle;
+import android.app.Activity;
+import android.view.DragEvent;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.Toast;
+
+public class MainActivity extends ActionBarActivity implements View.OnTouchListener{
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    public boolean onTouch(View objeto, MotionEvent evento){
+
+        if(evento.getAction() == MotionEvent.ACTION_DOWN){
+            ClipData datos = ClipData.newPlainText("","");;
+            View.DragShadowBuilder objeto_sombra = new View.DragShadowBuilder(objeto);
+            objeto.startDrag(datos, objeto_sombra, objeto, 0);
+            objeto.setVisibility(View.INVISIBLE);
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    final class MiDrag implements View.OnDragListener{
+
+
+        public boolean onDrag(View contenedor_nuevo, DragEvent evento){
+            switch (evento.getAction()){
+                case DragEvent.ACTION_DRAG_ENTERED:
+                    break;
+                case DragEvent.ACTION_DRAG_EXITED:
+                    break;
+                case DragEvent.ACTION_DROP:
+                    View objeto = (View) evento.getLocalState();
+                    ViewGroup papa_objeto = (ViewGroup) objeto.getParent();
+                    papa_objeto.removeView(objeto);
+
+                    LinearLayout contenedor_nuevo2 = (LinearLayout) contenedor_nuevo;
+                    contenedor_nuevo2.addView(objeto);
+
+                    objeto.setVisibility(View.VISIBLE);
+                    break;
+                default:
+                    break;
+            }
+            return true;
+        }
+
+
+
+
+
+
+}
