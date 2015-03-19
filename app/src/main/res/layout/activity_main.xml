@@ -61,9 +61,9 @@
 
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:id="@+id/imageView11"
-            android:src="@drawable/alfonso"
+            android:src="@drawable/alfonso1"
             android:layout_gravity="center_horizontal|top"/>
 
         <ImageView
@@ -76,12 +76,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/imageView9"
+            android:src="@drawable/enrique"
             />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/imageView8"
+            android:src="@drawable/jordi"
            />
 
         <ImageView
@@ -132,12 +134,12 @@
             android:layout_width="75dp"
             android:layout_height="fill_parent"
             android:background="#5582ff"
-            android:id="@+id/sevilla">
+            android:id="@+id/andalucia">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Sevilla"/>
+                android:text="Andalucia"/>
 
         </LinearLayout>
 

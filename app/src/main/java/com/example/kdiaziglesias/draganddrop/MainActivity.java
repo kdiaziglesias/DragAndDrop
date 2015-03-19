@@ -37,7 +37,7 @@ public class MainActivity extends ActionBarActivity implements View.OnTouchListe
         View superior = findViewById(R.id.sup);
         View inferior = findViewById(R.id.inf);
         View fuego = findViewById(R.id.cataluña);
-        View agua = findViewById(R.id.sevilla);
+        View agua = findViewById(R.id.andalucia);
         View electrico = findViewById(R.id.asturias);
         View planta = findViewById(R.id.galicia);
         superior.setOnDragListener(new MiDrag());
